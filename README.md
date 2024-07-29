@@ -15,7 +15,7 @@ _**Проценка**_ - переделанное приложение с Flask 
 ## Используемые технологии.
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-brightgreen.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.111.1-brightgreen.svg?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111.1-brightgreen.svg?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Uvicorn](https://img.shields.io/badge/Uvicorn-0.30.1-brightgreen.svg?style=flat&logo=uvicorn&logoColor=white)](https://www.uvicorn.org/)
 [![Aiohttp](https://img.shields.io/badge/Aiohttp-3.9.3-brightgreen.svg?style=flat&logo=python&logoColor=white)](https://docs.aiohttp.org/en/stable/)
 [![Asyncio](https://img.shields.io/badge/Asyncio-brightgreen.svg?style=flat&logo=python&logoColor=white)](https://docs.python.org/3/library/asyncio.html)

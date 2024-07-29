@@ -1,7 +1,7 @@
 import aiohttp
 from zeep import AsyncClient
 
-from .constants import *
+from constants import *
 
 
 async def rossko_get_method(article, brand):

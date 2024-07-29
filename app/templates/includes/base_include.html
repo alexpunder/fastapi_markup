@@ -1,0 +1,31 @@
+<tbody class="cart-table__body">
+    {% for result in data %}
+      <tr class="cart-table__row">
+        <td class="cart-table__column cart-table__column--image">
+          <div class="product-image">
+            <a class="product-image__body">
+                <img class="product-image__img" src="{{ result.warehouse }}" width="40%" height="20%">
+            </a>
+          </div>
+        </td>
+        <td class="cart-table__column cart-table__column--product">
+            {{ result.title }}
+        </td>
+        <td class="cart-table__column cart-table__column--product" data-title="Производитель">
+            {{ result.brand }}
+        </td>
+        <td class="cart-table__column cart-table__column--price" data-title="Артикул">
+            {{ result.article }}
+        </td>
+        <td class="cart-table__column cart-table__column--price" data-title="Цена">
+            {{ result.price }}
+        </td>
+        <td class="count cart-table__column cart-table__column--quantity" data-title="В наличии">
+            {{ result.stock }}
+        </td>
+        <td class="cart-table__column cart-table__column--product">
+            {{ result.warehouse_name }}
+        </td>
+      </tr>
+    {% endfor %}
+</tbody>

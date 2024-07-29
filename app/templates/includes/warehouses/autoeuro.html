@@ -1,0 +1,33 @@
+{% load static %}
+
+<tbody class="cart-table__body">
+{% for result in autoeuro %}
+  <tr class="cart-table__row">
+    <td class="cart-table__column cart-table__column--image">
+      <div class="product-image">
+        <a class="product-image__body">
+            <img class="product-image__img" src="{% static 'images/api/autoeuro.svg' %}" alt="АВТОЕВРО" width="40%" height="20%">
+        </a>
+      </div>
+    </td>
+    <td class="cart-table__column cart-table__column--product">
+      {{ result.name }}
+    </td>
+    <td class="cart-table__column cart-table__column--product" data-title="Производитель">
+      {{ result.brand }}
+    </td>
+    <td class="cart-table__column cart-table__column--price" data-title="Артикул">
+      {{ result.code }}
+    </td>
+    <td class="cart-table__column cart-table__column--price" data-title="Цена">
+        {{ result.price }}
+    </td>
+    <td class="count cart-table__column cart-table__column--quantity" data-title="В наличии">
+        {{ result.amount }}
+    </td>
+    <td class="cart-table__column cart-table__column--product">
+        {{ result.warehouse_name }}
+    </td>
+  </tr>
+{% endfor %}
+</tbody>

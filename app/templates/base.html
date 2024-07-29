@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Проценка</title>
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="icon" type="/static/images/icon_auto.ico" href="/static/images/icon_auto.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap">
+    <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="/static/vendor/fontawesome/css/all.min.css">
+  </head>
+  <body>
+    <div class="site">
+      <header class="site__header d-lg-block d-none">
+        <div class="site-header">
+          <div class="site-header__middle container">
+            <div class="site-header__logo">
+                <a href="{{ url_for('index') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                      <image href="/static/images/logo_header.svg" width="95%" height="100%" />
+                    </svg>
+                </a>
+            </div>
+            <div class="site-header__search">
+                <div class="search search--location--header ">
+                    <div class="search__body">
+                        <form class="search__form" action="{{ url_for('index') }}" method="GET">
+                          <input class="form-control d-flex col-8" name="article" placeholder="Артикул" aria-label="Site search" type="text" autocomplete="on">
+                          <select class="form-control col-4" name="brand" placeholder="Производитель" id="brand_search">
+                            {% for brand in all_brands %}
+                              <option value="{{ brand }}">{{ brand }}</option>
+                            {% endfor %}
+                          </select>
+                          <button class="search__button search__button--type--submit" type="submit">
+                              <svg width="20px" height="20px">
+                                  <use xlink:href="/static/images/sprite.svg#search-20"></use>
+                              </svg>
+                          </button>
+                          <div class="search__border"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="site__body">
+        <div class="cart block">
+          <div class="container">
+            {% if data %}
+            <table class="cart__table cart-table">
+              <thead class="cart-table__head">
+                <tr class="cart-table__row">
+                    <th class="cart-table__column cart-table__column--image">Поставщик</th>
+                    <th class="cart-table__column cart-table__column--product">Наименование товара</th>
+                    <th class="cart-table__column cart-table__column--product">Производитель</th>
+                    <th class="cart-table__column cart-table__column--price">Артикул</th>
+                    <th class="cart-table__column cart-table__column--price">Цена</th>
+                    <th class="cart-table__column cart-table__column--quantity">Наличие</th>
+                    <th class="cart-table__column cart-table__column--product">Склад</th>
+                </tr>
+              </thead>
+              {% include "includes/base_include.html" %}
+            </table>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/select2/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#brand_search').select2();
+    });
+  </script>
+</html>

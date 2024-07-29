@@ -1,0 +1,35 @@
+{% load static %}
+
+<tbody class="cart-table__body">
+{% for result in moskvorechie.result %}
+  {% if result.delivery == 'на складе' or result.delivery == '1 день' %}
+  <tr class="cart-table__row">
+    <td class="cart-table__column cart-table__column--image">
+      <div class="product-image">
+        <a class="product-image__body">
+            <img class="product-image__img" src="{% static 'images/api/moskvorechie.svg' %}" alt="МОСКВОРЕЧЬЕ" width="40%" height="20%">
+        </a>
+      </div>
+    </td>
+    <td class="cart-table__column cart-table__column--product">
+      {{ result.name }}
+    </td>
+    <td class="cart-table__column cart-table__column--product" data-title="Производитель">
+      {{ result.brand }}
+    </td>
+    <td class="cart-table__column cart-table__column--price" data-title="Артикул">
+      {{ result.nr }}
+    </td>
+    <td class="cart-table__column cart-table__column--price" data-title="Цена">
+      {{ result.price }}
+    </td>
+    <td class="count cart-table__column cart-table__column--quantity" data-title="В наличии">
+      {{ result.stock }}
+    </td>
+    <td class="cart-table__column cart-table__column--product">
+      {{ result.delivery }}
+    </td>
+  </tr>
+  {% endif %}
+{% endfor %}
+</tbody>
